@@ -13,6 +13,6 @@
       include('partials/testimonial.php');
       include('partials/contact.php');
       include('partials/footer.php');
-      include('partials/scripts.php');
+      include('partials/scripts.php');?>
 </body>
 </html>
