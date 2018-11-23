@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php include('partials/head.php'); ?>
+  <?php include('views/head.php'); ?>
 </head>
 <body>
-     <?php include('partials/preloader.php');
-      include('partials/nav-menu.php');
-      include('partials/home.php');
-      include('partials/about.php');
-      include('partials/team.php');
-      include('partials/menu.php');
-      include('partials/testimonial.php');
-      include('partials/contact.php');
-      include('partials/footer.php');
-      include('partials/scripts.php');?>
+     <?php //include('views/preloader.php');
+      include('views/nav-menu.php');
+      include('views/home.php');
+      include('views/about.php');
+      include('views/team.php');
+      include('views/menu.php');
+      include('views/testimonial.php');
+      include('views/contact.php');
+      include('views/footer.php');
+      include('views/scripts.php');?>
 </body>
 </html>
