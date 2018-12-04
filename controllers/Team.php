@@ -1,6 +1,6 @@
 <?php
 
-class Home
+class Team
 {
 
   public $teams;
@@ -12,10 +12,10 @@ class Home
   }
 
   public function getTeams(){
-    require('models/team1.php');
-    $team1 = new Team(1, 'fr');
-    $team2 = new Team(2, 'fr');
-    $team3 = new Team(3, 'fr');
+    require('models/Chef.php');
+    $team1 = new Chef(1, 'fr');
+    $team2 = new Chef(2, 'fr');
+    $team3 = new Chef(3, 'fr');
 
     return [$team1,$team2,$team3];
   }
