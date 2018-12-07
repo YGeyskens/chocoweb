@@ -13,13 +13,13 @@ class Slide
   function __construct($id = null, $locale = null)
   {
     $result = $this->querySlide($id, $locale);
-    $this->id = $result['id'];
-    $this->src = $result['img_src'];
-    $this->alt = $result['img_alt'];
-    $this->pre = $result['pre'];
-    $this->title = $result['title'];
-    $this->href = $result['btn_href'];
-    $this->button = $result['btn_label'];
+    $this->id = $result->id;
+    $this->src = $result->img_src;
+    $this->alt = $result->img_alt;
+    $this->pre = $result->pre;
+    $this->title = $result->title;
+    $this->href = $result->btn_href;
+    $this->button = $result->btn_label;
   }
   public function querySlide($id, $locale){
     $pdo = getConnectionToDb();

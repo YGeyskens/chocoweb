@@ -6,7 +6,6 @@
 <section id="team" data-stellar-background-ratio="0.5">
      <div class="container">
           <div class="row">
-
                <div class="col-md-12 col-sm-12">
                     <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                          <h2>Meet our chefs</h2>
@@ -21,8 +20,9 @@
                                     <div class="team-item">
                                          <h4><?=$team->desc; ?></h4>
                                          <ul class="social-icon">
-                                              <li><a href="<?=$team->href; ?>" class="fa fa-linkedin-square"></a></li>
-                                              <li><a href="<?=$team->href; ?>" class="fa fa-envelope-o"></a></li>
+                                           <?php foreach($team->networks as $network): ?>
+                                              <li><a href="<?=$network->url;?>" class="fa fa-linkedin-square"></a></li>
+                                          <?php endforeach;?>
                                          </ul>
                                     </div>
                                </div>
