@@ -1,5 +1,5 @@
 <?php
-include_once('models/model.php');
+include_once('models/database.php');
 class Slide
 {
   public $id;
@@ -25,9 +25,10 @@ class Slide
     $pdo = getConnectionToDb();
     $query = $pdo->prepare('SELECT s.id, s.img_src, st.img_alt, st.pre, st.title, st.btn_href, st.btn_label
                           FROM slides s
-                          JOIN slide_translations st ON st.slides_id = s.id AND st.locale = ?
-                          WHERE s.id = ?;');
-    $query->execute([$locale, $id]);
+                          JOIN slide_translations st ON st.slides_id = s.id AND st.locale = :locale
+                          WHERE s.id = :id;');
+    $arr = [":id"=>$id, ":locale"=>$locale];
+    $query->execute($arr);
     return $query->fetch();
   }
 }

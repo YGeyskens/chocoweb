@@ -1,5 +1,5 @@
 <?php
-include_once('models/model.php');
+include_once('models/database.php');
 class Chef
 {
   public $id;
@@ -23,9 +23,10 @@ class Chef
     $pdo = getConnectionToDb();
     $query = $pdo->prepare('SELECT c.id, c.img, c.name, ct.description, ct.job
                           FROM chefs c
-                          JOIN chefs_translations ct ON ct.chef_id = c.id AND ct.locale = ?
-                          WHERE c.id = ? ;');
-    $query->execute([$locale, $id]);
+                          JOIN chefs_translations ct ON ct.chef_id = c.id AND ct.locale = :locale
+                          WHERE c.id = :id ;');
+    $arr = [":id"=>$id, ":locale"=>$locale];
+    $query->execute($arr);
     return $query->fetch();
   }
   public function queryNetworks($id){
@@ -33,8 +34,9 @@ class Chef
     $pdo = getConnectionToDb();
     $query = $pdo->prepare('SELECT cs.network, cs.url
                           FROM chefs_socials cs
-                          WHERE cs.chef_id = ? ;');
-    $query->execute([$id]);
+                          WHERE cs.chef_id = :id ;');
+    $arr = [":id"=>$id];
+    $query->execute($arr);
     return $query->fetchAll();
   }
 
