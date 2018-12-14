@@ -1,3 +1,8 @@
+<?php
+    require('./controllers/Contact.php');
+    $contact = new Contact;
+?>
+
 <!-- CONTACT -->
 <section id="contact" data-stellar-background-ratio="0.5">
      <div class="container">
