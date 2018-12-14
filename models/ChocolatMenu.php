@@ -34,7 +34,8 @@ class ChocolatMenu
     $query = $pdo->prepare('SELECT i.id, it.name
                           FROM ingredients i
                           JOIN ingredients_translations it ON it.ingredient_id = i.id AND it.locale = :locale
-                          WHERE i.id = :id ;');
+                          JOIN ingredient_chocolat im on  im.ingredient_id = i.id
+                          WHERE im.chocolat_id = :id ;');
     $arr = [":id"=>$id, ":locale"=>$locale];
     $query->execute($arr);
     return $query->fetchAll();

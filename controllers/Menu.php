@@ -13,6 +13,7 @@ class Menu
 
   public function getMenus(){
     require('models/ChocolatMenu.php');
+
     $menu1 = new ChocolatMenu(1, 'fr');
     $menu2 = new ChocolatMenu(2, 'fr');
     $menu3 = new ChocolatMenu(3, 'fr');
